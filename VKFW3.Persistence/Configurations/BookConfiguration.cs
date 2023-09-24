@@ -6,6 +6,7 @@ namespace VKFW3.Persistence.Configurations;
 
 public class BookConfiguration : IEntityTypeConfiguration<Book>
 {
+    // veritabanı kuralları
     public void Configure(EntityTypeBuilder<Book> builder)
     {
         builder.Property(c => c.Name).IsRequired().HasMaxLength(100);

@@ -7,6 +7,8 @@ namespace VKFW3.Persistence;
 
 public static class MigrationManager
 {
+    // uygulama ayağa kalktığında son migrationun ayağa kalkıp kalkmadığı kontrol eder.
+    // migrate edilmemişse otomatik migrate eder.
     public static IHost MigrateDatabase(this IHost host)
     {
         using (var scope = host.Services.CreateScope())

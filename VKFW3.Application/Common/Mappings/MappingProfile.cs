@@ -3,6 +3,12 @@ using AutoMapper;
 
 namespace VKFW3.Application.Common.Mappings;
 
+/*
+ * Burada amaç AutoMapper profilini yapılandırmak ve IMapFrom<T> arabirimini uygulayan sınıfları otomatik olarak bulur
+ *  ve bu sınıflar için eşleme kurallarını uygular.
+ */
+
+
 public class MappingProfile : Profile
 {
     public MappingProfile()

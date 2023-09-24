@@ -20,6 +20,12 @@ public class GetBooksQueryHandler : IRequestHandler<GetBooksQuery,List<BookDto>>
 
     public async Task<List<BookDto>> Handle(GetBooksQuery request, CancellationToken cancellationToken)
     {
+        
+        // Örneğin ; 
+        // (request.Name == null || c.Name.ToLower().Contains(request.Name.ToLower()))
+        // requestteki Name propertysi boş ise hepsi, değil ise filtreler.
+        
+        
         return await _context.Books
             .Where(c =>
                 (request.Name == null || c.Name.ToLower().Contains(request.Name.ToLower())) &&

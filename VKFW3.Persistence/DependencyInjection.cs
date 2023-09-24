@@ -10,10 +10,12 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddPersistence(this IServiceCollection services, IConfiguration configuration)
     {
+        // DbContext yapılandırması
         services.AddDbContext<ApplicationContext>(options =>
             options.UseSqlServer(configuration.GetConnectionString("SqlServer"))
         );
         
+        // IApplicationContext-ApplicationContext DI
         services.AddTransient<IApplicationContext>(provider => provider.GetService<ApplicationContext>());
         return services;
     }
